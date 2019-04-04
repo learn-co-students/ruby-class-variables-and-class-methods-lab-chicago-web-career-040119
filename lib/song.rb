@@ -1,3 +1,5 @@
+
+
 class Song
 
   attr_accessor :name, :genre, :artist
@@ -28,6 +30,7 @@ class Song
   end
 
   def self.genre_count
+      # we check if key exists
     new_hash = {}
     @@genres.map do |genre|
       if new_hash[genre]
@@ -41,9 +44,12 @@ class Song
 
   def self.artist_count
     new_hash = {}
+    # we check if key exists
     @@artists.map do |artist|
-      if new_hash[artist]
+      # if it does we increment count
+      if new_hash.has_key?(artist)
         new_hash[artist] +=1
+        # else we create a new key/value pair
       else
         new_hash[artist] = 1
       end
@@ -52,3 +58,7 @@ class Song
    end
 
 end
+
+sonia= Song.new("sonia", "singer", "rap")
+diana = Song.new("diana", "painter", "rap")
+zack= Song.new("zack", "singer", "rap")
