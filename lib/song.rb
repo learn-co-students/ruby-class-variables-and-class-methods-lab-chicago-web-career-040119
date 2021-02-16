@@ -4,9 +4,9 @@ class Song
 
   attr_accessor :name, :genre, :artist
 
-  @@count =0
-  @@artists =[]
-  @@genres =[]
+  @@count = 0
+  @@artists = []
+  @@genres = []
 
   def initialize(name, artist, genre)
     @name=name
@@ -33,13 +33,13 @@ class Song
       # we check if key exists
     new_hash = {}
     @@genres.map do |genre|
-      if new_hash[genre]
+      if new_hash.has_key?(genre)
         new_hash[genre] +=1
       else
-        new_hash[genre] =1
+        new_hash[genre] = 1
       end
     end
-  new_hash
+    new_hash
   end
 
   def self.artist_count
@@ -59,6 +59,8 @@ class Song
 
 end
 
-sonia= Song.new("sonia", "singer", "rap")
-diana = Song.new("diana", "painter", "rap")
-zack= Song.new("zack", "singer", "rap")
+sonia = Song.new("sonia", "singer", "rap")
+diana = Song.new("diana", "painter", "pop")
+zack = Song.new("zack", "singer", "rap")
+
+puts Song.artists
