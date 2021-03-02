@@ -32,7 +32,7 @@ class Song
     hash = {}
     @@genres.map do |genre|
       if hash[genre]  #if hash contains a key of a particular genre
-        hash[genre] += 1 #increment key/value
+        hash[genre] += 1 #increment value
       else hash[genre] = 1 #create a new key/value pair
       end
     end
@@ -42,7 +42,7 @@ class Song
   def self.artist_count
     hash = {}
     @@artists.map do |artist|
-      #binding.pry
+      # binding.pry
       if hash.has_key?(artist)  #if hash contains a key of a particular artist
          hash[artist] += 1 #increment key/value
       else hash[artist] = 1 #create a new key/value pair
